@@ -1,6 +1,6 @@
 // Programa: Adivina un número
-// Versión 5: Pedimos al usuario un dato para ver si acierta el número a adivinar y le decimos si ha acertado o no, y si es mayor o menor.
-//            Repetimos el proceso hasta que adivina el número.
+// Versión 8: Pedimos al usuario un dato para ver si acierta el número a adivinar y le decimos si ha acertado o no, y si es mayor o menor.
+//            Repetimos el proceso hasta que adivina el número o ha introducido 10 números, usando un bucle FOR
 // Entrada: El dato que introduce el usuario
 // Salida: muestra en pantalla el número que había que adivinar y si ha acertado o no
 
@@ -11,11 +11,13 @@ int main() {
 	int numero_a_adivinar = 12; 	// Declaración e inicialización de la variable
     int numero_del_usuario;
 
-    do {
+
+    for( int i=0; numero_del_usuario!=numero_a_adivinar && i<10; ++i) {
         cout << "Intente adivinar el número que he pensado." << endl
             << "¿Qué número cree que es? ";
 
         cin >> numero_del_usuario;
+
 
         if( numero_a_adivinar==numero_del_usuario ) {
             cout << "¡Enhorabuena, ha acertado!" << endl;
@@ -26,7 +28,9 @@ int main() {
                 cout << "No ha acertado. El número que debe adivinar es MAYOR que el que ha dicho." << endl;
             }
         }
-    } while (numero_del_usuario!=numero_a_adivinar);// while
+
+
+    } // for
     cout << endl << endl;
 
 	return 0;
