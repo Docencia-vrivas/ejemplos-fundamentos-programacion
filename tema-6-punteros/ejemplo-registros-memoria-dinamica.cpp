@@ -83,12 +83,16 @@ int main() {
     delete app_bbdd->cliente;
     delete app_bbdd;
 
-
+    
+    // Ejemplo de vector de structs en memoria dinámica
     Cliente_Servidor *muchos_c_s=new Cliente_Servidor[10];
     muchos_c_s[5].cliente=&mi_portatil;
     muchos_c_s[9].servidor=new Ordenador;
     muchos_c_s[9].servidor->marca="Acer";
     (muchos_c_s+4)->cliente=new Ordenador;
 
+    delete muchos_c_s[9].servidor;
+    delete (muchos_c_s+4)->cliente;
+    delete [] muchos_c_s;
     return 0;
 }
